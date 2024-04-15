@@ -1,0 +1,122 @@
+[
+    {
+        "label": "os.path",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os.path",
+        "description": "os.path",
+        "detail": "os.path",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "os",
+        "description": "os",
+        "isExtraImport": true,
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "msvcrt",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "msvcrt",
+        "description": "msvcrt",
+        "detail": "msvcrt",
+        "documentation": {}
+    },
+    {
+        "label": "test_file_dictionary",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def test_file_dictionary(name_field,file_name):\n    if (path.exists(file_name)):\n        data = open(file_name,\"r\",encoding='utf-8')\n        title = data.readline()\n        data.close()\n        if (title == name_field ):\n            print(\"Файл справочника существует- Dictionary.txt\")\n        else:\n            data = open(file_name,'w', encoding='utf-8')\n            data.writelines(name_field)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "input_contact",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def input_contact(name_fild):\n    list_contact = list()\n    print(name_field)\n    print(\"Введите данные контакта\", len(name_fild))\n    for i in range(len(name_fild)):\n        fild_i = str(input((name_fild[i])+\": \"))\n        list_contact.append(fild_i)\n    return(list_contact)\n'''\nпечать справочника",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "print_dictionary",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def print_dictionary(file_name):\n    data = open(file_name,\"r\",encoding='utf-8')\n    title = data.readline()\n    count = 0\n    print(\"------------------------------------\")\n    print(\"№№\", title[:-1])\n    print(\"------------------------------------\")\n    title = data.readline()\n    while len(title) > 1:\n        count += 1",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "add_contact",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def add_contact(file_name):\n    data = open(file_name,\"r\",encoding='utf-8')\n    line1 = data.readline()\n    data.close()\n    title = line1.split()\n    line = str()\n    print(\"Введите значения параметров для справочника\")\n    for i in range(len(title)):\n        param = input(title[i]+\": \")\n        line = line + str(param) + \" \"",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": {
+            "name": "",
+            "kind": 2,
+            "peekOfCode": "def  find_user(file_name,pozition):\n    find_word = input()\n    data = open(file_name,\"r\",encoding='utf-8')\n    line1 = data.readline()\n    line1 = data.readline()\n    count = 0\n    find_true = False\n    while len(line1) > 1:\n        count += 1\n        line = line1.split()"
+        },
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def  find_user(file_name,pozition):\n    find_word = input()\n    data = open(file_name,\"r\",encoding='utf-8')\n    line1 = data.readline()\n    line1 = data.readline()\n    count = 0\n    find_true = False\n    while len(line1) > 1:\n        count += 1\n        line = line1.split()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "rewrite_contact",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def rewrite_contact(file_name):\n    number_str = int(input(\"Введите номер записи c 1: \"))    \n    if number_str < 1:\n        print(\"Недопустимый номер записи\")\n        return\n    data = open(file_name,\"r\",encoding='utf-8')\n    title = data.readline()\n    line1 = data.readline()\n    count = 0\n    find_true = False",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "rewrite_in_oldfile",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def rewrite_in_oldfile(file_name):\n    number_str = int(input(\"Введите номер записи в справочнике c 1: \"))    \n    if number_str < 1:\n        print(\"Недопустимый номер записи\")\n        return\n    data1 = open(file_name,\"r\",encoding='utf-8')\n    title = data1.readline()\n    line1 = data1.readline()\n    count = 0\n    find_true = False",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "name_field",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "name_field = (\"Фамилия Имя Отчество Номер_телефона\\n\")\nfile_name = \"Dictionary.txt\"\ntest_file_dictionary(name_field,file_name)   \nuser_command = 1\nwhile user_command != \"0\":\n    print(\"\\nДопустимые команды:\\n Завершить работу -- 0 \\n Распечатать справочник -- 1 \\n Добавить контакт -- 2 \\n Найти контакт по фамилии -- 3 \\n Найти контакт по имени -- 4 \\n Найти контакт по номеру телефона -- 5 \")\n    print(\" Переписать контакт в новый файл -- 6\\n Переписать контакт в имеющийся файл --7\\n\")\n    user_command = input(\"Введите_команду: \")\n    if user_command == \"0\":\n        print(\"\\n Программа завершила работу\\n\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "file_name",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "file_name = \"Dictionary.txt\"\ntest_file_dictionary(name_field,file_name)   \nuser_command = 1\nwhile user_command != \"0\":\n    print(\"\\nДопустимые команды:\\n Завершить работу -- 0 \\n Распечатать справочник -- 1 \\n Добавить контакт -- 2 \\n Найти контакт по фамилии -- 3 \\n Найти контакт по имени -- 4 \\n Найти контакт по номеру телефона -- 5 \")\n    print(\" Переписать контакт в новый файл -- 6\\n Переписать контакт в имеющийся файл --7\\n\")\n    user_command = input(\"Введите_команду: \")\n    if user_command == \"0\":\n        print(\"\\n Программа завершила работу\\n\")\n        break",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "user_command",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "user_command = 1\nwhile user_command != \"0\":\n    print(\"\\nДопустимые команды:\\n Завершить работу -- 0 \\n Распечатать справочник -- 1 \\n Добавить контакт -- 2 \\n Найти контакт по фамилии -- 3 \\n Найти контакт по имени -- 4 \\n Найти контакт по номеру телефона -- 5 \")\n    print(\" Переписать контакт в новый файл -- 6\\n Переписать контакт в имеющийся файл --7\\n\")\n    user_command = input(\"Введите_команду: \")\n    if user_command == \"0\":\n        print(\"\\n Программа завершила работу\\n\")\n        break\n    if user_command == \"1\":\n        # печать справочника",
+        "detail": "main",
+        "documentation": {}
+    }
+]
